@@ -15,8 +15,9 @@ public class CountryServiceImpl implements CountryService {
     @Autowired
     private CountryRepository countryRepository;
     @Override
-    public List<String> getAllCountries() {
+    public List<Country> getAllCountries() {
         List<Country> getAllCountries = countryRepository.findAll();
-        return getAllCountries.stream().map(Country::getName).collect(Collectors.toList());
+        return getAllCountries;
+        //return getAllCountries.stream().map(Country::getName).collect(Collectors.toList());
     }
 }
